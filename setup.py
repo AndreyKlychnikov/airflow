@@ -362,6 +362,9 @@ ldap = [
     'ldap3>=2.5.1',
     'python-ldap',
 ]
+mattermost = [
+    'mattermostdriver>=7.3.0'
+]
 mongo = [
     'dnspython>=1.13.0,<2.0.0',
     'pymongo>=3.6.0',
@@ -560,6 +563,7 @@ PROVIDERS_REQUIREMENTS: Dict[str, List[str]] = {
     'microsoft.azure': azure,
     'microsoft.mssql': mssql,
     'microsoft.winrm': winrm,
+    'mattermost': mattermost,
     'mongo': mongo,
     'mysql': mysql,
     'neo4j': neo4j,
