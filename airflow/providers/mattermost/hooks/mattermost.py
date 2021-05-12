@@ -44,8 +44,6 @@ class MattermostHook(BaseHook):  # noqa
             'message': 'Hello, world!'
         })
 
-    :param base_url: A string representing the Mattermost API base URL.
-    :type base_url: str
     :param token: Mattermost API token
     :type token: str
     :param mattermost_conn_id: Mattermost connection id that has Mattermost API token in the password field.
@@ -57,17 +55,15 @@ class MattermostHook(BaseHook):  # noqa
 
     def __init__(
         self,
-        url: str,
         token: Optional[str] = None,
         mattermost_conn_id: Optional[str] = None,
         **client_args: Any,
     ) -> None:
         super().__init__()
-        self.url = url
         self.token = self.__get_token(token, mattermost_conn_id)
 
         self.client = mattermostdriver.Driver({
-            'url': self.url,
+            'url': self.get_connection(mattermost_conn_id).get_uri(),
             'token': self.token,
             **client_args
         })
