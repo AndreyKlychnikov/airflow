@@ -412,6 +412,9 @@ rabbitmq = [
 redis = [
     'redis~=3.2',
 ]
+redmine = [
+    'python-redmine~=2.3.0',
+]
 salesforce = [
     'simple-salesforce>=1.0.0',
     'tableauserverclient',
@@ -574,6 +577,7 @@ PROVIDERS_REQUIREMENTS: Dict[str, List[str]] = {
     'presto': presto,
     'qubole': qubole,
     'redis': redis,
+    'redmine': redmine,
     'salesforce': salesforce,
     'samba': samba,
     'segment': segment,
