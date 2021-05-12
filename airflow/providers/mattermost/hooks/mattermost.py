@@ -28,7 +28,7 @@ class MattermostHook(BaseHook):  # noqa
     """
     Creates a Mattermost connection, to be used for calls. Takes both Mattermost API token directly and
     connection that has Mattermost API token. If both supplied, Mattermost API token will be used.
-    Exposes also the rest of mattermostdriver.Driver args
+    Exposes also the rest of mattermostdriver. Driver args
     Examples:
 
     .. code-block:: python
@@ -65,10 +65,6 @@ class MattermostHook(BaseHook):  # noqa
         super().__init__()
         self.url = url
         self.token = self.__get_token(token, mattermost_conn_id)
-
-        if 'login_id' in client_args:
-            client_args['login'] = client_args['login_id']
-            del client_args['login_id']
 
         self.client = mattermostdriver.Driver({
             'url': self.url,
